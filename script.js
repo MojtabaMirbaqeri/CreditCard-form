@@ -41,7 +41,7 @@ function checkForm() {
   inputsArray.forEach((input) => {
     showBlankError(input);
   });
-  if (!weHaveError) {
+  if (!document.querySelector(".show-blank-error")) {
     showThankyou();
   }
 }
@@ -52,19 +52,12 @@ inputsArray.forEach((input) => {
   });
 });
 
-let weHaveError = false;
 function showBlankError(input) {
-  let isBlank = false;
   if (!input.value) {
     input.parentElement.classList.add("show-blank-error");
-    isBlank = true;
-    weHaveError = true;
   } else {
     input.parentElement.classList.remove("show-blank-error");
-    isBlank = false;
-    weHaveError = false;
   }
-  return isBlank;
 }
 
 function showThankyou() {
