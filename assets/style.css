@@ -1,0 +1,182 @@
+body {
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  height: 100dvh;
+  min-height: 100dvh;
+}
+
+.trans {
+  transition: all 0.5s ease-in-out;
+}
+
+#card-con {
+  background-image: url(./images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-faces-con {
+  max-width: 550px;
+}
+
+#card-con .card-face {
+  width: 85%;
+}
+
+.cc-front {
+  top: 57%;
+}
+
+.cc-front .card-face {
+  background-image: url(./images/bg-card-front.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cc-front .card-face img {
+  width: 55px;
+}
+
+.cc-back .cvc {
+  top: 43%;
+  right: 12%;
+}
+
+.form label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #100c16;
+}
+
+.form input {
+  font-size: 20px;
+}
+
+.form input::placeholder {
+  color: hsl(279, 6%, 55%);
+}
+
+.form input::-webkit-outer-spin-button,
+.form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#confirm-btn,
+#refresh-btn {
+  background-color: #100c16;
+}
+
+.complete {
+  right: 120%;
+  z-index: -1;
+}
+
+.check {
+  width: 50px;
+  transition-duration: 1s !important;
+}
+
+#card-info-con.show-thank-you .form {
+  opacity: 0;
+}
+
+#card-info-con.show-thank-you .complete {
+  z-index: 0;
+  right: 0;
+}
+
+#card-info-con.show-thank-you .check {
+  transform: scale(1.5);
+}
+
+.form .blank-error {
+  display: none;
+}
+
+.form .show-blank-error .blank-error {
+  display: block;
+}
+
+.form .show-blank-error input {
+  border-color: #e33f45 !important;
+}
+
+.form .show-blank-error input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(253, 41, 13, 0.25);
+}
+
+@media screen and (min-width: 500px) {
+  .card-number {
+    font-size: 1.75rem !important;
+  }
+  .card-name-con {
+    font-size: 1.25rem;
+  }
+  .cvc {
+    font-size: 19px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #card-con {
+    background-image: url(./images/bg-main-desktop.png);
+    width: 30%;
+  }
+  .card-faces-con {
+    width: 140%;
+    max-width: 435px;
+    position: absolute !important;
+    transform: translateX(-50%);
+    left: 100%;
+  }
+  .card-number {
+    font-size: 1.3rem !important;
+  }
+  #card-info-con .form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  #card-info-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cc-back,
+  .cc-front {
+    position: static !important;
+  }
+  .cc-front .card-face {
+    gap: 2.4rem;
+    background-size: 100% 100%;
+  }
+  .cc-back {
+    margin-bottom: 15px;
+  }
+  .complete {
+    width: 50% !important;
+    transform: translateX(-50%) !important;
+    transform: translateY(-50%);
+    left: 50% !important;
+    opacity: 0;
+  }
+  #card-info-con.show-thank-you .complete {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1660px) {
+  .card-faces-con {
+    max-width: 550px !important;
+  }
+  .cc-front .card-face {
+    gap: 4.5rem;
+  }
+  .card-number {
+    font-size: 1.75rem !important;
+  }
+  .form {
+    width: 60% !important;
+  }
+}
